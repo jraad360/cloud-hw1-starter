@@ -40,7 +40,7 @@ apigClientFactory.newClient = function (config) {
         config.sessionToken = '';
     }
     if(config.region === undefined) {
-        config.region = 'us-east-2';
+        config.region = 'us-east-1';
     }
     //If defaultContentType is not defined then default to application/json
     if(config.defaultContentType === undefined) {
@@ -53,7 +53,7 @@ apigClientFactory.newClient = function (config) {
 
 
     // extract endpoint and path from url
-    var invokeUrl = 'https://abc123.execute-api.us-east-1.amazonaws.com/v1';
+    var invokeUrl = 'https://z7b7dz8b43.execute-api.us-east-1.amazonaws.com/dev';
     var endpoint = /(^https?:\/\/[^\/]+)/g.exec(invokeUrl)[1];
     var pathComponent = invokeUrl.substring(endpoint.length);
 
@@ -96,7 +96,7 @@ apigClientFactory.newClient = function (config) {
             body: body
         };
 
-
+        console.log('POST REQUEST');
         return apiGatewayClient.makeRequest(nluPostRequest, authType, additionalParams, config.apiKey);
     };
 
@@ -114,7 +114,7 @@ apigClientFactory.newClient = function (config) {
             body: body
         };
 
-
+        console.log('OPTIONS REQUEST');
         return apiGatewayClient.makeRequest(nluOptionsRequest, authType, additionalParams, config.apiKey);
     };
 

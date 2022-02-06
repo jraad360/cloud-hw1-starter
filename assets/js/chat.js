@@ -49,6 +49,7 @@ $(document).ready(function() {
 
     callChatbotApi(msg)
       .then((response) => {
+        console.log('NICEEE');
         console.log(response);
         var data = response.data;
 
